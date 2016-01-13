@@ -1,0 +1,21 @@
+﻿<Window x:Class="BuildViewAllInOne.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BuildView" Height="726" Width="1024" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/BuildViewAllInOne;component/BuildViewAllInOne.ico">
+    <Grid>
+        <telerik:Label Content="BuildView" Height="78" HorizontalAlignment="Left" Margin="356,12,0,0" Name="title" VerticalAlignment="Top" Width="260" FontSize="52" FontWeight="Bold" FontStretch="Normal" FontFamily="Comic Sans MS" />
+        <telerik:Label Content="система за тримерно сканиране на интериор" Height="60" HorizontalAlignment="Left" Margin="55,96,0,0" Name="heading" VerticalAlignment="Top" Width="907" FontSize="40" FontWeight="Bold" FontStretch="Normal" FontFamily="Comic Sans MS" />
+        <telerik:RadQuadrantNWGauge Height="190" HorizontalAlignment="Left" Margin="-3,210,0,0" Name="radQuadrantNWGauge1" VerticalAlignment="Top" Width="308" MouseLeftButtonDown="radQuadrantNWGauge1_MouseLeftButtonDown" />
+        <telerik:RadQuadrantNEGauge Height="190" HorizontalAlignment="Left" Margin="747,210,0,0" Name="radQuadrantNEGauge1" VerticalAlignment="Top" Width="200" MouseLeftButtonDown="radQuadrantNEGauge1_MouseLeftButtonDown" InnerBorderThickness="2" OuterBorderThickness="1" />
+        <telerik:RadRadialGauge Height="190" HorizontalAlignment="Left" Margin="341,210,0,0" Name="radRadialGauge1" VerticalAlignment="Top" Width="326" MouseLeftButtonDown="radRadialGauge1_MouseLeftButtonDown_1"/>
+        <Label Content="Editor" Height="41" HorizontalAlignment="Left" Margin="469,406,0,0" Name="editLabel" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Width="74" />
+        <Label Content="3DScan" Height="41" HorizontalAlignment="Left" Margin="101,406,0,0" Name="scanLabel" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Width="81" />
+        <Label Content="Visualisation" Height="41" HorizontalAlignment="Left" Margin="789,406,0,0" Name="editwLabel" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" Width="131" />
+        <Image Height="50" HorizontalAlignment="Left" Margin="97,304,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="130" Source="/BuildViewAllInOne;component/Images/kinectPNG.png" MouseLeftButtonDown="radQuadrantNWGauge1_MouseLeftButtonDown"/>
+        <Image Height="92" HorizontalAlignment="Left" Margin="437,262,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="136" Source="/BuildViewAllInOne;component/Images/greedy_triangulation.png" MouseLeftButtonDown="radRadialGauge1_MouseLeftButtonDown_1"/>
+        <Image Height="116" HorizontalAlignment="Left" Margin="775,250,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="108" Source="/BuildViewAllInOne;component/Images/autodesk_3ds_max_folder_by_hagakure_ger-d4nqrxk.png" MouseLeftButtonDown="radQuadrantNEGauge1_MouseLeftButtonDown"/>
+        <TextBlock Height="169" HorizontalAlignment="Left" Margin="29,495,0,0" Name="textBlock1" Text="Използвайте 3DScan, за да сканирате геометрията на интериора. Вашите файлове ще бъдат записани в избрана от вас папка, след което вие ще може да ги използвате." VerticalAlignment="Top" Width="275" TextWrapping="Wrap" FontSize="20" TextAlignment="Left" FontWeight="Normal" Foreground="DarkGray" />
+        <TextBlock FontSize="20" FontWeight="Normal" Foreground="DarkGray" Height="228" HorizontalAlignment="Left" Margin="355,495,0,0" Name="textBlock2" Text="Записаниете файлове, имате възможност да ги импортирате, запишете, отворите и експотирате. Върху облакът от точки може да се прилага филтрация и триангулация." TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
+        <TextBlock FontSize="20" FontWeight="Normal" Foreground="DarkGray" Height="228" HorizontalAlignment="Left" Margin="686,495,0,0" Name="textBlock3" Text="Имате възможност да видите вашите резултати като импортирате файлове в Collada форматът във външен 3D редактор. Обработете ги и ги побликувайте в Интернет" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
+    </Grid>
+</Window>

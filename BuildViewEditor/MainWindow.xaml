@@ -1,0 +1,65 @@
+﻿<Window x:Class="BuildViewEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:my="clr-namespace:XNAControl;assembly=XNAControl"
+        xmlns:local="clr-namespace:BuildViewEditor"
+        Title="NSideView - Reconstruction" Height="350" Width="525" Icon="/BuildViewEditor;component/Images/1398950792_45038.ico" WindowState="Maximized">
+    <DockPanel>
+        <Menu Name="Menu" Width="Auto" Height="30" DockPanel.Dock="Top" >
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"/>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            <MenuItem Header="_File">
+                <MenuItem Header="_Save" Name="fileSave" InputGestureText="Ctrl+S" Click="fileSave_Click"/>
+                <MenuItem Header="_Open" Name="fileOpen" InputGestureText="Ctrl+O" Click="fileOpen_Click"/>
+                <MenuItem Header="_Import" Name="fileImport" InputGestureText="Ctrl+I" Click="fileImport_Click"/>
+                <MenuItem Header="_Export" Name="fileExport" InputGestureText="Ctrl+E" Click="fileExport_Click"/>
+                <MenuItem Header="E_xit" Name="fileExit" Click="fileExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_PCL">
+                <MenuItem Header="_StatisticalOutlierRemoval" InputGestureText="Ctrl+1" Name="meshStour" Click="meshStour_Click"/>
+                <MenuItem Header="_Smoothing" InputGestureText="Ctrl+2" Name="meshSmooth" Click="meshSmooth_Click"/>
+                <MenuItem Header="_Triangulation" Name="meshTriangulation" InputGestureText="Ctrl+T" Click="meshTriangulation_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About" Name="helpButton" Click="helpButton_Click"/>
+            </MenuItem>
+            <ComboBox Height="23" Name="comboBoxColor" Width="120" Margin="0" SelectionChanged="comboBoxColor_SelectionChanged" Padding="4,3" SelectedIndex="-1" IsReadOnly="True" HorizontalAlignment="Right" IsEditable="True" Text="Background color:">
+                <ComboBoxItem Content="White" Name="comboBoxItemWhite" Background="White" />
+                <ComboBoxItem Content="Grey" Name="comboBoxItemGrey" Background="Gray" />
+                <ComboBoxItem Content="Yellow" Name="comboBoxItemYellow" Background="Yellow" />
+                <ComboBoxItem Content="Red" Name="comboBoxItemRed" Background="Red" />
+                <ComboBoxItem Content="Blue" Name="comboBoxItemBlue" Background="Blue" />
+                <ComboBoxItem Content="Black" Name="comboBoxItemBlack" Selected="comboBoxItemBlack_Selected" Background="Black" />
+            </ComboBox>
+        </Menu>
+        <my:UserControl1 x:Name="xnaControl" DockPanel.Dock="Bottom"/>
+    </DockPanel>
+    <Window.CommandBindings>
+        <CommandBinding Command="Save" Executed="fileSave_Click" />
+        <CommandBinding Command="Open" Executed="fileOpen_Click" />
+        <CommandBinding Command="Replace" Executed="fileImport_Click" />
+        <CommandBinding Command="Refresh" Executed="fileExport_Click" />
+        <CommandBinding Command="Search" Executed="meshStour_Click" />
+        <CommandBinding Command="Favorites" Executed="meshSmooth_Click" />
+        <CommandBinding Command="Stop" Executed="meshTriangulation_Click" />
+        <!--
+        TODO: Implement Custom Commands :
+            Replace = Import
+            Refresh = Export
+            Search = StatisticalOutlierRemoval
+            Stop = Triangulation
+        -->
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Control" Command="Save"/>
+        <KeyBinding Key="O" Modifiers="Control" Command="Open"/>
+        <KeyBinding Key="I" Modifiers="Control" Command="Replace" />
+        <KeyBinding Key="E" Modifiers="Control" Command="Refresh"/>
+        <KeyBinding Key="D1"  Modifiers="Control" Command="Search"/>
+        <KeyBinding Key="D2"  Modifiers="Control" Command="Favorites"/>
+        <KeyBinding Key="T" Modifiers="Control" Command="Stop"/>
+    </Window.InputBindings>
+</Window>

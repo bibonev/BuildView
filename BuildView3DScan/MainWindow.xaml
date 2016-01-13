@@ -1,0 +1,18 @@
+﻿<Window x:Class="BuildView3DScan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BuildView - 3D Scanning" Height="612" Width="838" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/BuildView3DScan;component/BuildView3DScan.ico">
+    <Grid>
+        <Button Content="Capture" FontSize="25" FontFamily="Comic Sans MS"  Height="66" HorizontalAlignment="Left" Margin="284,376,0,0" Name="buttonCreate" VerticalAlignment="Top" Width="222" Click="ButtonCreate_Click" />
+        <Image Name="imgStream" Width="300" Height="200" Margin="436,66,80,307" />
+        <Image Name="depthStream" Width="300" Height="200" Margin="58,66,458,0" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="140,291,0,0" Name="transformationBox" VerticalAlignment="Top" Width="544" />
+        <Label Content="Transformation:" Height="28" HorizontalAlignment="Left" Margin="32,289,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="Depth:" Height="28" HorizontalAlignment="Left" Margin="152,32,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="Color:" Height="28" HorizontalAlignment="Left" Margin="556,32,0,0" Name="label3" VerticalAlignment="Top" />
+        <Button Content="Configure" Height="23" HorizontalAlignment="Left" Margin="729,521,0,0" Name="buttonConfigure" VerticalAlignment="Top" Width="75" Click="ButtonConfigureClick" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="104,521,0,0" Name="capturePath" VerticalAlignment="Top" Width="619" IsReadOnly="True" />
+        <Label Content="Capture folder" Height="28" HorizontalAlignment="Left" Margin="12,516,0,0" Name="label4" VerticalAlignment="Top" Width="86" />
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="697,291,0,0" Name="comportBox" VerticalAlignment="Top" Width="75" SelectionChanged="comportBox_SelectionChanged" />
+    </Grid>
+</Window>
